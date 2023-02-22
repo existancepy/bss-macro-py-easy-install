@@ -1,0 +1,72 @@
+#!/bin/zsh
+
+printf "\n"
+printf "Credit to sees (ouznex) for the base code of this install"
+printf "\e[31m\n"
+printf "If you are having problems i reccomend you to follow the guide.\n"
+printf "Find the guide on: https://github.com/existancepy/bss-macro-py\n"
+printf "\n"
+printf "If you are having problems with the installation you can also try to put sudo before the script and execute it then.\n"
+printf "Please wait.\n"
+printf "Ready, starting now\n"
+printf "\033[0m\n"
+printf "\n"
+
+read -p "Check if Python is installed? (y/n): " check_python
+
+if [ $check_python = "y" ]; then
+    if command -v python3 &>/dev/null; then
+        echo "Python 3 is already installed."
+    else
+        echo "Python 3 is not installed. Installing Python 3 now..."
+        sudo sh -c 'curl -O https://www.python.org/ftp/python/3.8.0/python-3.8.0-macosx10.9.pkg && open python-3.8.0-macosx10.9.pkg'
+    fi
+fi
+
+read -p "Install pip? (y/n): " install_pip
+
+if [ $install_pip = "y" ]; then
+    echo "Installing pip..."
+    sudo sh -c 'curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py'
+fi
+
+sudo sh -c 'curl -L -o ~/Downloads/main.zip https://github.com/existancepy/bss-macro-py/archive/refs/heads/main.zip && unzip ~/Downloads/main.zip -d ~/Downloads && mv ~/Downloads/bss-macro-py-main ~/Desktop/bss-macro-py-main && mv ~/Desktop/bss-macro-py-main ~/Desktop/bss-macro-py-temp && mv ~/Desktop/bss-macro-py-temp ~/Desktop/bss-macro-py-main && rm ~/Downloads/main.zip'
+
+read -p "Install additional libraries? (y/n): " install_libraries
+
+if [ $install_libraries = "y" ]; then
+    echo "Installing additional libraries..."
+    sudo pip3 install pyautogui pillow opencv-python==4.3.0.38 python-imagesearch discord-webhook keyboard discord.py
+fi
+
+if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Hombrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+printf "Installing tesseract and pytsseract"
+
+sudo brew install tesseract
+sudo pip3 install pytesseract
+
+
+
+
+read -p "Macro has been installed, start it up? (y/n): " start_macro
+
+if [ $start_macro = "y" ]; then
+    cd ~/Desktop/bss-macro-py-main
+    python3 e_macro.py
+fi
+    printf "\n"
+printf "\e[31m\n"
+printf "To run the macro manually, enter the following 2 commands in terminal:\n"
+printf "cd desktop/bss-macro-py\n"
+printf "python3 e_macro.py\n"
+printf ""
+printf "To stop the macro,"
+printf "tab out of roblox, make sure terminal is in focus and press ctrl c"
+printf "or,"
+printf "right click the macro app in the dock and force quit\n"
+printf "\033[0m\n"
+printf "\n"
