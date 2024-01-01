@@ -39,13 +39,13 @@ if [ $chip = 'i386' ]; then
 	fi
 fi
 
-echo "${python_link}" | sed -e 's/\/.*\///g'
+filename=$(echo "${python_link}" | sed -e 's/\/.*\///g')
 
 if python"${python_ver}" --version; then
 	printf "Python is already installed\n"
 else
 	echo "Python is not installed, installing python ${python_ver}\n"
-	curl -O "https:/${python_link}" && open 
+	curl -O "https:/${python_link}" && open "${filename}"
 fi
 
 echo "Installing tools"
