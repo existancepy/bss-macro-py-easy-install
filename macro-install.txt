@@ -84,6 +84,6 @@ else
 	python3 -m pip install "pyscreeze<0.1.29"
 	pip3 install protobuf==3.20.0
 	pip3 install orjson==3.9.6
-
+fi
 printf "\n\n\n\033[32;1mInstallation complete!Visit the discord on instructions for settings and permissions \033[0m\n"
 read
