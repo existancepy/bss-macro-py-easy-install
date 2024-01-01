@@ -46,14 +46,14 @@ if python"${python_ver}" --version; then
 else
 	printf "\033[1;35mPython is not installed, installing python ${python_ver}\nThere should be a popup for the python installer.\n\033[0m"
 	curl -O "https:/${python_link}" && open "${filename}"
-	printf "\033[1;35mPress enter when python is installed\033[0m"
+	printf "\033[1;35mPress enter to continue when python is installed\033[0m"
 	read
 fi
 
 printf "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 printf "\033[1;35mInstalling command line tools.\nThere should be a pop-up, click the install button\n\n\033[0m"
 xcode-select --install
-printf "\033[1;35mPress enter when xcode command line tools are installed\033[0m"
+printf "\033[1;35mPress enter to continue when xcode command line tools are installed\033[0m"
 read
 echo "Enter your password (the password used to log into the admin user)"
 sudo xcode-select --switch /Library/Developer/CommandLineTools
