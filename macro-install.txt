@@ -92,5 +92,5 @@ else
 	pip"${python_ver}" install protobuf==3.20.0
 	pip"${python_ver}" install orjson==3.9.6
 fi
-printf "\n\n\n\033[32;1mInstallation complete!Visit the discord on instructions for settings and permissions \033[0m\n"
+printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
 read
