@@ -68,7 +68,7 @@ if [ $chip = 'arm64' ]; then
 	python"${python_ver}" -m pip install paddlepaddle==2.3.2
 	python"${python_ver}" -m pip install --no-deps paddleocr==2.6.1.0
 	python"${python_ver}" -m pip install "lxml<4.9.3"
-	python"${python_ver}" -m pip install --default-timeout=100 attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb lxml opencv-contrib-python opencv-python==4.5.5.64 openpyxl pdf2docx Polygon3 premailer pyclipper pymupdf==1.23.5 python-docx rapidfuzz scikit-image shapely tqdm visualdl
+	python"${python_ver}" -m pip install --default-timeout=100 attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb opencv-contrib-python opencv-python==4.5.5.64 openpyxl pdf2docx Polygon3 premailer pyclipper pymupdf==1.23.5 python-docx rapidfuzz scikit-image shapely tqdm visualdl
 	python"${python_ver}" -m pip install "numpy<1.24.0"
 	python"${python_ver}" -m pip install "pyscreeze<0.1.29"
 	pip"${python_ver}" install orjson==3.9.6
