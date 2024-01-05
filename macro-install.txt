@@ -59,6 +59,7 @@ echo "Enter your password (the password used to log into the admin user)"
 sudo xcode-select --switch /Library/Developer/CommandLineTools
 printf "\033[1;35mInstalling rust\n\n\033[0m"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
 printf "\033[1;35mMaking sure pip is installed\033[0m\n\n"
 python3 -m ensurepip
 
