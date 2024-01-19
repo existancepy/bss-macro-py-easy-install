@@ -10,7 +10,7 @@ printf "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 #check mac compatibility
 
 if [ $chip = 'arm64' ]; then
-	if echo -e "$os_ver \n13.0.0" | sort -V | tail -n1 | grep -Fq "13.0.0"; then
+	if echo -e "$os_ver \n12.99.99" | sort -V | tail -n1 | grep -Fq "12.99.99"; then
 		printf "\033[31;1mYour mac is not compatible. It has to be Ventura or later. Consider updating it. \033[0m\n"
 		exit 1
 	fi
