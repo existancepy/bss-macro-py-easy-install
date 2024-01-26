@@ -76,8 +76,6 @@ if [ $chip = 'arm64' ]; then
 	python"${python_ver}" -m pip install --user "numpy<1.24.0"
 	python"${python_ver}" -m pip install --user "pyscreeze<0.1.29"
 	pip"${python_ver}" install --user orjson==3.9.6
-	pip"${python_ver}" uninstall opencv-python-headless
-	pip"${python_ver}" install opencv-python-headless
 
 elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	python"${python_ver}" -m pip install --upgrade pip setuptools wheel
