@@ -97,5 +97,8 @@ else
 	pip"${python_ver}" install --user protobuf==3.20.0
 	pip"${python_ver}" install --user orjson==3.9.6
 fi
+
+python"${python_ver}" -m pip install opencv-fixer==0.2.5
+python"${python_ver}" -c "from opencv_fixer import AutoFix; AutoFix()"
 printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
 read
