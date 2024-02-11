@@ -61,7 +61,7 @@ printf "\033[1;35mInstalling rust\n\n\033[0m"
 printf "\033[1;35mWhen prompted by the program, enter '1' for default installation\033[0m"
 printf "\033[1;35mPress enter to start rust installation\033[0m"
 read
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 printf "\033[1;35mMaking sure pip is installed\033[0m\n\n"
 python3 -m ensurepip
