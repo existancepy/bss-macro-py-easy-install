@@ -92,7 +92,5 @@ pip"${python_ver}" install --user "pdf2docx<0.5.7"
 python"${python_ver}" -m pip install --user "numpy<1.24.0"
 python"${python_ver}" -m pip install --user "pyscreeze<0.1.29"
 
-python"${python_ver}" -m pip install opencv-fixer==0.2.5
-python"${python_ver}" -c "from opencv_fixer import AutoFix; AutoFix()"
 printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
 read
