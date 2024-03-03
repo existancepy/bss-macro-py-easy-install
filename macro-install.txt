@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 #get system information
 chip=$(arch)
 os_ver=$(sw_vers -productVersion)
