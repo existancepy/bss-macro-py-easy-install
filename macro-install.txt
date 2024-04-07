@@ -68,7 +68,7 @@ if [ $chip = 'arm64' ]; then
 	python"${python_ver}" -m pip install --user paddlepaddle==2.3.2
 	python"${python_ver}" -m pip install --no-deps paddleocr==2.6.1.0
 	printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
-	python"${python_ver}" -m pip install "lxml<4.9.3"
+	python"${python_ver}" -m pip install --user "lxml<4.9.3"
 	python"${python_ver}" -m pip install --default-timeout=100 --user attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb opencv-contrib-python==4.5.5.64 opencv-python==4.5.5.64 openpyxl Polygon3 premailer pyclipper pymupdf==1.23.1 python-docx rapidfuzz scikit-image shapely tqdm visualdl
 	pip"${python_ver}" install --user orjson==3.9.6
 
@@ -78,7 +78,7 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	python"${python_ver}" -m pip install --no-deps --user paddleocr==2.6.1.3 scikit-image imgaug visualdl tritonclient 
 	python"${python_ver}" -m pip install --user python-rapidjson==1.10 pywavelets==1.1.1 imageio networkx packaging pillow tifffile scipy attrdict beautifulsoup4 cython fire fonttools lanms-neo==1.0.2 lmdb openpyxl premailer pyclipper python-docx rapidfuzz shapely tqdm greenlet==1.1.2 pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf bce-python-sdk flask flask-babel gradio onnx pandas psutil rarfile x2paddle lazy_loader
 	printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
-	STATIC_DEPS=true pip3 install lxml 
+	STATIC_DEPS=true pip3 install --user lxml 
 	pip"${python_ver}" install --user "urllib3<2"
 	pip"${python_ver}" install --user "protobuf<4"
 else
