@@ -81,6 +81,7 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	STATIC_DEPS=true pip3 install --user lxml 
 	pip"${python_ver}" install --user "urllib3<2"
 	pip"${python_ver}" install --user "protobuf<4"
+	python"${python_ver}" -m pip install --user mss==7.0.1
 else
 	python"${python_ver}" -m pip install --user pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss
 	python"${python_ver}" -m pip install --user paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
