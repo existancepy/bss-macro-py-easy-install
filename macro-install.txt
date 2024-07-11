@@ -65,6 +65,7 @@ python3 -m ensurepip
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 if [ $chip = 'arm64' ]; then
 	python"${python_ver}" -m pip install --user --default-timeout=100 pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss
+	python"${python_ver}" -m pip install --user --default-timeout=100 opencv-python
 	#python"${python_ver}" -m pip install --user --default-timeout=100 paddlepaddle==2.3.2
 	#python"${python_ver}" -m pip install --no-deps --default-timeout=100 paddleocr==2.6.1.0
 	#python"${python_ver}" -m pip install --default-timeout=100 --user attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb opencv-contrib-python==4.5.5.64 opencv-python==4.5.5.64 openpyxl Polygon3 premailer pyclipper pymupdf==1.23.1 python-docx rapidfuzz scikit-image shapely tqdm visualdl
@@ -94,9 +95,9 @@ else
 	python"${python_ver}" -m pip install install ocrmac
 fi
 python"${python_ver}" -m pip install install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pdf2docx<0.5.7"
-python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "numpy<1.24.0"
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pyscreeze<0.1.29"
 python"${python_ver}" -m pip install install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org html2image
+python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "numpy<1.24.0"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
 printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
