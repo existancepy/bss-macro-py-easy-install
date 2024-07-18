@@ -83,6 +83,7 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	python"${python_ver}" -m pip install install --user "urllib3<2"
 	python"${python_ver}" -m pip install install --user "protobuf<4"
 	python"${python_ver}" -m pip install --user mss==7.0.1
+	python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pdf2docx<0.5.7"
 else
 	python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-python
 	#python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -93,7 +94,6 @@ else
 	#pip"${python_ver}" install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org orjson==3.9.6
 	python"${python_ver}" -m pip install install ocrmac
 fi
-python"${python_ver}" -m pip install install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pdf2docx<0.5.7"
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pyscreeze<0.1.29"
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org html2image
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "numpy<1.24.0"
