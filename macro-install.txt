@@ -95,7 +95,7 @@ else
 fi
 python"${python_ver}" -m pip install install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pdf2docx<0.5.7"
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pyscreeze<0.1.29"
-python"${python_ver}" -m pip install install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org html2image
+python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org html2image
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "numpy<1.24.0"
 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org ImageHash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
