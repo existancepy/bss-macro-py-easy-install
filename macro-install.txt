@@ -50,7 +50,7 @@ else
 fi
 
 printf "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-printf "\033[1;35mInstalling command line tools.\nThere should be a pop-up, click the install button\n\n\033[0m"
+printf "\033[1;35mInstalling command line tools.\nThere should be a pop-up if its not already installed, click the install button\n\n\033[0m"
 xcode-select --install
 printf "\033[1;35mPress enter to continue after xcode command line tools are installed\033[0m"
 read
