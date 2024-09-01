@@ -45,9 +45,14 @@ if python"${python_ver}" --version; then
 else
 	printf "\033[1;35mPython is not installed, installing python ${python_ver}\nThere should be a popup for the python installer.\n\033[0m"
 	curl -O "https:/${python_link}" && open "${filename}"
-	printf "\033[1;35mPress enter to continue when python is installed\033[0m"
-	read
+	# Wait until python installation has finished.
+	until $(python"${python_ver}" --version); do
+	  sleep 5;
+	done
+	#printf "\033[1;35mPress enter to continue when python is installed\033[0m"
+	#read
 fi
+
 
 printf "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 printf "\033[1;35mInstalling command line tools.\nThere should be a pop-up if its not already installed, click the install button\n\n\033[0m"
