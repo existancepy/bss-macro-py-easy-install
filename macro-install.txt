@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 #get system information
 chip=$(arch)
@@ -74,6 +73,7 @@ printf "\033[1;35mMaking sure pip is installed\033[0m\n\n"
 python3 -m ensurepip
 python"${python_ver}" -m pip install --upgrade pip setuptools wheel
 
+set -e
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 if [ $chip = 'arm64' ]; then
 	python"${python_ver}" -m pip install --user --default-timeout=100 pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-python==4.5.5.64
