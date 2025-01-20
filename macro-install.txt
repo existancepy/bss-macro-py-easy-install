@@ -76,6 +76,7 @@ python"${python_ver}" -m pip install --upgrade pip setuptools wheel
 
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 if [ $chip = 'arm64' ]; then
+	
 	python"${python_ver}" -m pip install --user --default-timeout=100 pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-python==4.5.5.64
 	#python"${python_ver}" -m pip install --user --default-timeout=100 paddlepaddle==2.3.2
 	#python"${python_ver}" -m pip install --no-deps --default-timeout=100 paddleocr==2.6.1.0
@@ -97,6 +98,7 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	python"${python_ver}" -m pip install --user mss==7.0.1
 	python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --no-deps "pdf2docx<0.5.7"
 else
+	python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org "pyobjc<11.0"
 	python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-python==4.6.0.66
 	#python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
 	#python"${python_ver}" -m pip install --no-deps --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddleocr==2.6.1.3
