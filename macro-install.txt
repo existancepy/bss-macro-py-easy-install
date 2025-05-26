@@ -35,7 +35,7 @@ if [ $chip = 'i386' ]; then
 		python_ver="3.8"
 		python_link="/www.python.org/ftp/python/3.8.0/python-3.8.0-macosx10.9.pkg"
 	else 
-		python_link="/www.python.org/ftp/python/3.9.5/python-3.9.5-macosx10.9.pkg"
+		python_link="/www.python.org/ftp/python/3.9.5/python-3.9.5-macos11.pkg"
 	fi
 fi
 
