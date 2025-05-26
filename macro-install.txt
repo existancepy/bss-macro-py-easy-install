@@ -91,7 +91,7 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	python"${python_ver}" -m pip install --upgrade pip setuptools wheel
 	python"${python_ver}" -m pip install --user paddlepaddle opencv-python==4.4.0.46 opencv-contrib-python==4.4.0.46 numpy==1.19.1 Polygon3
 	python"${python_ver}" -m pip install --no-deps --user paddleocr==2.6.1.3 scikit-image imgaug visualdl tritonclient 
-	python"${python_ver}" -m pip install --user python-rapidjson==1.10 pywavelets==1.1.1 imageio networkx packaging pillow tifffile scipy attrdict beautifulsoup4 cython fire fonttools lanms-neo==1.0.2 lmdb openpyxl premailer pyclipper python-docx rapidfuzz shapely tqdm greenlet==1.1.2 pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf bce-python-sdk flask flask-babel gradio onnx pandas psutil rarfile x2paddle lazy_loader
+	python"${python_ver}" -m pip install --user python-rapidjson==1.10 pywavelets==1.1.1 imageio networkx packaging pillow tifffile scipy attrdict beautifulsoup4 cython fire fonttools lanms-neo==1.0.2 lmdb openpyxl premailer pyclipper python-docx rapidfuzz shapely tqdm greenlet pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf bce-python-sdk flask flask-babel gradio onnx pandas psutil rarfile x2paddle lazy_loader
 	printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
 	STATIC_DEPS=true pip3 install --user lxml 
 	python"${python_ver}" -m pip install --user "urllib3<2"
