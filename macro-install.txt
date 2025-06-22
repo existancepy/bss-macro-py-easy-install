@@ -5,8 +5,6 @@ install_pip_package() {
     
     if [ "$chip" = "arm64" ]; then
         arch -arm64 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages
-    elif [ "$chip" = "i386" ]; then
-        arch -x86_64 python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages
     else
         #fallback for other architectures
         python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages
@@ -16,8 +14,6 @@ install_pip_package() {
 upgrade_pip_tools() {
     if [ "$chip" = "arm64" ]; then
         arch -arm64 python"${python_ver}" -m pip install --upgrade pip setuptools wheel
-    elif [ "$chip" = "i386" ]; then
-        arch -x86_64 python"${python_ver}" -m pip install --upgrade pip setuptools wheel
     else
         python"${python_ver}" -m pip install --upgrade pip setuptools wheel
     fi
