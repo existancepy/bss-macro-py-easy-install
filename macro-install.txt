@@ -140,6 +140,6 @@ install_pip_package "pygetwindow"
 install_pip_package "requests" #used to check if this script was ran, should be installed by discord-webhooks
 install_pip_package "numpy<1.24.0"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
 printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
 read
