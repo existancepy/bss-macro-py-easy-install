@@ -118,7 +118,7 @@ activate_virtual_env
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
 if [ $chip = 'arm64' ]; then
-	install_pip_package "pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-python"
+	install_pip_package "pyautogui pillow discord-webhook discord.py matplotlib pymupdf mss opencv-python"
 	#python"${python_ver}" -m pip install --user --default-timeout=100 paddlepaddle==2.3.2
 	#python"${python_ver}" -m pip install --no-deps --default-timeout=100 paddleocr==2.6.1.0
 	#python"${python_ver}" -m pip install --default-timeout=100 --user attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb opencv-contrib-python==4.5.5.64 opencv-python==4.5.5.64 openpyxl Polygon3 premailer pyclipper pymupdf==1.23.1 python-docx rapidfuzz scikit-image shapely tqdm visualdl
@@ -131,7 +131,7 @@ if [ $chip = 'arm64' ]; then
 elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	install_pip_package "paddlepaddle opencv-python==4.4.0.46 opencv-contrib-python==4.4.0.46 numpy==1.19.1 Polygon3"
 	install_pip_package "paddleocr==2.6.1.3 scikit-image imgaug visualdl tritonclient" "--no-deps" 
-	install_pip_package "python-rapidjson==1.10 pywavelets==1.1.1 imageio networkx packaging pillow tifffile scipy attrdict beautifulsoup4 cython fire fonttools lanms-neo==1.0.2 lmdb openpyxl premailer pyclipper python-docx rapidfuzz shapely tqdm greenlet pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf bce-python-sdk flask flask-babel gradio onnx pandas psutil rarfile x2paddle lazy_loader"
+	install_pip_package "python-rapidjson==1.10 pywavelets==1.1.1 imageio networkx packaging pillow tifffile scipy attrdict beautifulsoup4 cython fire fonttools lanms-neo==1.0.2 lmdb openpyxl premailer pyclipper python-docx rapidfuzz shapely tqdm greenlet pyautogui pillow discord-webhook discord.py matplotlib pymupdf bce-python-sdk flask flask-babel gradio onnx pandas psutil rarfile x2paddle lazy_loader"
 	printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
 	STATIC_DEPS=true python"${python_ver}" -m pip install --user lxml 
 	install_pip_package "urllib3<2"
@@ -143,7 +143,7 @@ else
 	install_pip_package "pyobjc-core<11.0"
 	install_pip_package "pyobjc-framework-Cocoa<11.0"
 	install_pip_package "pyobjc-framework-ColorSync<11.0" "--no-deps"
-	install_pip_package "pyautogui pillow discord-webhook discord.py pynput matplotlib pymupdf mss opencv-contrib-python==4.4.0.46 opencv-python==4.4.0.46"
+	install_pip_package "pyautogui pillow discord-webhook discord.py matplotlib pymupdf mss opencv-contrib-python==4.4.0.46 opencv-python==4.4.0.46"
 	#python"${python_ver}" -m pip install --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
 	#python"${python_ver}" -m pip install --no-deps --user --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddleocr==2.6.1.3
 	#printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
@@ -165,6 +165,7 @@ install_pip_package "pygetwindow"
 install_pip_package "requests" #used to check if this script was ran, should be installed by discord-webhooks
 install_pip_package "numpy<1.24.0"
 install_pip_package "aiohttp==3.10.5"
+install_pip_package "pynput"
 install_pip_package "eel"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
