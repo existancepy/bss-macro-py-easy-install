@@ -15,8 +15,6 @@ create_virtual_env() {
 activate_virtual_env() {
     printf "\033[1;35mActivating virtual environment\033[0m\n"
     source "$VENV_PATH/bin/activate"
-    # Update PATH to use venv python
-    export PATH="$VENV_PATH/bin:$PATH"
 }
 
 install_pip_package() {
