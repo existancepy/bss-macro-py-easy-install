@@ -115,8 +115,6 @@ upgrade_pip_tools
 create_virtual_env
 activate_virtual_env
 
-pip uninstall -y -r <(pip freeze)
-
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
 if [ $chip = 'arm64' ]; then
