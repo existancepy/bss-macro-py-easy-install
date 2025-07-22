@@ -22,10 +22,10 @@ install_pip_package() {
     local extra_args="$2"
     
     if [ "$chip" = "arm64" ]; then
-        arch -arm64 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 --force-reinstall $extra_args $packages --constraint <(echo "$constraints")
+        arch -arm64 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
     else
         #fallback for other architectures
-        pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 --force-reinstall $extra_args $packages --constraint <(echo "$constraints")
+        pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
     fi
 }
 
@@ -114,6 +114,8 @@ upgrade_pip_tools
 
 create_virtual_env
 activate_virtual_env
+
+pip uninstall -y -r <(pip freeze)
 
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
