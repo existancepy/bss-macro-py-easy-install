@@ -64,7 +64,7 @@ printf "\033[32;1mYour mac is compatible \033[0m\n\n\n"
 
 python_ver="3.9"
 python_link="/www.python.org/ftp/python/3.9.8/python-3.9.8-macos11.pkg"
-constraints=$'pyobjc-core==9.2\npyobjc==9.2'
+constraints=$''
 if [ $chip = 'i386' ]; then
 	if echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 		python_ver="3.7"
