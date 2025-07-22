@@ -22,7 +22,7 @@ install_pip_package() {
     local extra_args="$2"
     
     if [ "$chip" = "arm64" ]; then
-        arch -arm64 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
+        pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
     else
         #fallback for other architectures
         pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
@@ -179,6 +179,7 @@ install_pip_package "pynput"
 
 #download packages a second time
 pip install eel
+pip install pynput
 if echo -e "$os_ver \n10.15.0" | sort -V | head -n1 | grep -Fq "10.15.0"; then
 	pip install ocrmac
 fi
