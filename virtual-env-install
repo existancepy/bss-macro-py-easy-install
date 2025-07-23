@@ -22,10 +22,10 @@ install_pip_package() {
     local extra_args="$2"
     
     if [ "$chip" = "arm64" ]; then
-        arch -arm64 python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
+        arch -arm64 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
     else
         #fallback for other architectures
-        python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
+        pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --default-timeout=100 $extra_args $packages --constraint <(echo "$constraints")
     fi
 }
 
