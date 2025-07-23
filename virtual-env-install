@@ -112,8 +112,23 @@ python"${python_ver}" -m ensurepip
 python"${python_ver}" -m pip cache purge
 upgrade_pip_tools
 
-create_virtual_env
-activate_virtual_env
+attempt=1
+while [ "$attempt" -le 3 ]; do
+	create_virtual_env
+	activate_virtual_env
+	
+	# Validate Python and pip paths inside the venv
+	if [ -x "$VENV_PATH/bin/python" ] && [ -x "$VENV_PATH/bin/pip" ]; then
+		echo -e "\033[1;32mVirtual environment is valid\033[0m"
+		break
+	else
+		echo -e "\033[1;31mVirtual environment is broken, recreating...\033[0m"
+		rm -rf "$VENV_PATH"
+		((attempt++))
+		sleep 2
+		
+	fi
+done
 
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
