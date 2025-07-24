@@ -193,11 +193,11 @@ install_pip_package "aiohttp==3.10.5"
 install_pip_package "pynput"
 
 #download packages a second time
-pip install eel
-pip install pynput
-if echo -e "$os_ver \n10.15.0" | sort -V | head -n1 | grep -Fq "10.15.0"; then
-	pip install ocrmac
-fi
+#pip install eel
+#pip install pynput
+#if echo -e "$os_ver \n10.15.0" | sort -V | head -n1 | grep -Fq "10.15.0"; then
+	#pip install ocrmac
+#fi
 
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
