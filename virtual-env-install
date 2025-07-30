@@ -132,7 +132,7 @@ done
 
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
-if [ $chip = 'arm64' ]; then
+if [ $python_ver = '3.9' ]; then
 	install_pip_package "opencv-python"
 	install_pip_package "mss"
 	#python"${python_ver}" -m pip install --default-timeout=100 paddlepaddle==2.3.2
