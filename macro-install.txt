@@ -81,14 +81,30 @@ fi
 
 filename=$(echo "${python_link}" | sed -e 's/\/.*\///g')
 
-printf "\033[1;35mPython is not installed, installing python ${python_ver}\nThere should be a popup for the python installer.\n\033[0m"
-curl -O "https:/${python_link}" && open "${filename}"
-# Wait until python installation has finished.
-until $(python"${python_ver}" --version &> /dev/null); do
-  sleep 5;
-done
-#printf "\033[1;35mPress enter to continue when python is installed\033[0m"
-#read
+if python"${python_ver}" --version; then
+	printf "\033[1;32mPython is already installed\033[0m\n"
+	if [ "$chip" = "arm64" ]; then
+	    python_path=$(which python${python_ver})
+	    arch_output=$(file "$python_path")
+	
+	    if echo "$arch_output" | grep -q "arm64"; then
+	        echo -e "\033[1;32mPython $python_ver has a arm64 binary\033[0m"
+	    else
+	        echo -e "\033[1;31mThere are no arm64 binaries for Python $python_ver!\033[0m"
+	        echo -e "\033[1;33mYou can fix this by uninstalling your current python 3.9 version and rerunning this command. Alternatively, install the arm64 binaries using your package manager (brew, miniforge, etc).\033[0m"
+	    	exit 1
+		fi
+	fi
+else
+	printf "\033[1;35mPython is not installed, installing python ${python_ver}\nThere should be a popup for the python installer.\n\033[0m"
+	curl -O "https:/${python_link}" && open "${filename}"
+	# Wait until python installation has finished.
+	until $(python"${python_ver}" --version &> /dev/null); do
+	  sleep 5;
+	done
+	#printf "\033[1;35mPress enter to continue when python is installed\033[0m"
+	#read
+fi
 
 if xcode-select --print-path &> /dev/null; then
 	printf "\033[1;32mCommand Line Tools are already installed.\033[0m\n"
@@ -129,8 +145,7 @@ done
 printf "\033[1;35mInstalling libraries\033[0m\n\n"
 
 if [ $python_ver = '3.9' ]; then
-	install_pip_package "opencv-python"
-	install_pip_package "mss"
+	install_pip_package "opencv-python<4.12"
 	#python"${python_ver}" -m pip install --default-timeout=100 paddlepaddle==2.3.2
 	#python"${python_ver}" -m pip install --no-deps --default-timeout=100 paddleocr==2.6.1.0
 	#python"${python_ver}" -m pip install --default-timeout=100 attrdict beautifulsoup4 cython fire fonttools imgaug lanms-neo==1.0.2 lmdb opencv-contrib-python==4.5.5.64 opencv-python==4.5.5.64 openpyxl Polygon3 premailer pyclipper pymupdf==1.23.1 python-docx rapidfuzz scikit-image shapely tqdm visualdl
@@ -175,7 +190,6 @@ else
 	install_pip_package "pyobjc-framework-Cocoa<11.0"
 	install_pip_package "pyobjc-framework-ColorSync<11.0" "--no-deps"
 	install_pip_package "opencv-python==4.6.0.66"
-	install_pip_package "mss"
 	#python"${python_ver}" -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
 	#python"${python_ver}" -m pip install --no-deps --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org paddleocr==2.6.1.3
 	#printf "\033[31;1mInstalling lxml, this can take a while \033[0m\n"
@@ -185,6 +199,7 @@ else
 	install_pip_package "ocrmac"
 fi
 install_pip_package "pyautogui"
+install_pip_package "mss"
 install_pip_package "pillow"
 install_pip_package "discord-webhook"
 install_pip_package "discord.py"
