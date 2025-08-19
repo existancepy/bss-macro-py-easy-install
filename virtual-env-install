@@ -229,5 +229,5 @@ pip install "numpy<2"
 
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/Install_Certificates.txt)"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/existancepy/bss-macro-py-easy-install/main/extras/html2image_fix.txt)"
-printf "\n\n\n\033[32;1mInstallation complete!\nVisit the discord on instructions for settings and permissions \033[0m\n"
+printf "\n\n\n\033[32;1mInstallation complete!\nVisit the gitbook for the remaining instructions \033[0m\n"
 read
