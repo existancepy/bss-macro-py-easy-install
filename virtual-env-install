@@ -167,8 +167,6 @@ elif echo -e "$os_ver \n10.15.0" | sort -V | tail -n1 | grep -Fq "10.15.0"; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 	source "$HOME/.cargo/env"
 
- "opencv-python==4.4.0.46 opencv-contrib-python==4.4.0.46 numpy==1.25.2 Polygon3"
-
 	install_pip_package "opencv-python==4.4.0.46 opencv-contrib-python==4.4.0.46 numpy==1.25.2 Polygon3" "--prefer-binary"
 
 	install_pip_package "easyocr" "--no-deps"
